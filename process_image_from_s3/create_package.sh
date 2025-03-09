@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm send_image_to_s3_package.zip
+rm process_image_from_s3_package.zip
 
 dir_name=package/
 
@@ -12,7 +12,7 @@ cp lambda_function.py $dir_name
 
 cd $dir_name
 
-zip -r ../send_image_to_s3_package.zip .
+zip -r ../process_image_from_s3_package.zip .
 
 cd ../
 
