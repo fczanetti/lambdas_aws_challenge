@@ -39,4 +39,4 @@ def lambda_handler(event, context):
 
         new_image.seek(0)
 
-    s3_client.put_object(Body=new_image, Bucket=bucket_name, Key=f"resized/resized_{filename}")
+    s3_client.put_object(Body=new_image, Bucket=bucket_name, Key=f"resized/{filename}")

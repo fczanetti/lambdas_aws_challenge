@@ -21,9 +21,8 @@ def lambda_handler(event, context):
     image = event["body-json"]
     filename = event["params"]["querystring"]["filename"]
     decoded_image = base64.b64decode(image)
-    key = datetime.strftime(datetime.now(), "%Y%m%d_%H%M%S")
 
     try:
-        bucket.put_object(Body=decoded_image, Key=f"images/{key}_{filename}")
+        bucket.put_object(Body=decoded_image, Key=f"images/{filename}")
     except Exception as e:
         log.info(f"An exception was raised when trying to send an image to S3: {e}")
